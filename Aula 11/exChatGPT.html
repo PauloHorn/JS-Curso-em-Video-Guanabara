@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Ponderada</title>
+</head>
+<body>
+    <h1>Calculadora de média ponderada</h1>
+    <form id="calculadoraForm">
+        Nota 1: <input type="number" id="nota1" required><br>
+        Peso 1: <input type="number" id="peso1" required><br>
+
+        Nota 2: <input type="number" id="nota2" required><br>
+        Peso 2: <input type="number" id="peso2" required><br>
+
+        Nota 3: <input type="number" id="nota3" required><br>
+        Peso 3: <input type="number" id="peso3" required><br>
+
+        <input type="button" value="Calcular média ponderada" onclick="calcularMedia()">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularMedia() {
+            var n1 = Number(window.document.getElementById('nota1').value)
+            var n2 = Number(window.document.getElementById('nota2').value)
+            var n3 = Number(window.document.getElementById('nota3').value)
+            var p1 = Number(window.document.getElementById('peso1').value)
+            var p2 = Number(window.document.getElementById('peso2').value)
+            var p3 = Number(window.document.getElementById('peso3').value)
+
+            var resultado = window.document.getElementById('resultado')
+
+            var mediaPonderada = (n1*p1 + n2*p2 + n3*p3)/(p1+p2+p3)
+
+            resultado.innerHTML = `A média ponderada é igua à ${mediaPonderada.toFixed(1)}`
+        }
+    </script>
+</body>
+</html>
